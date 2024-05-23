@@ -37,25 +37,25 @@ Users should be able to:
 
 ## What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- I used ```data-*``` attribute and ```[data-theme='dark']``` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used ```(prefers-color-scheme: dark)``` media rule:
+  ```css
+  :root {
+    --clr-primary: #FFFFFF;
+    --clr-secondary: #F2F2F2;
+  }
 
-To see how you can add code snippets, see below:
+  [data-theme='dark'] {
+    --clr-primary: #2B3844;
+    --clr-secondary: #202C36;
+  }
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --clr-primary: #2B3844;
+      --clr-secondary: #202C36;
+    }
+  }
+  ```
 
 ## Continued development
 
@@ -63,5 +63,5 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Easy Dark Mode (and Multiple Color Themes!) in React](https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/) - This helped me figure out how to organize CSS for color mode change from a top level.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.

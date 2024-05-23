@@ -5,7 +5,7 @@ export default function Header() {
   const { colorMode, toggleColorMode } = useContext(ColorModeContext);
 
   return (
-    <header>
+    <header data-theme={colorMode === "dark" ? "dark" : ""}>
       <h1>Where in the world?</h1>
       <button onClick={toggleColorMode}>{colorMode === "light" ? "Dark" : "Light"} Mode</button>
     </header>

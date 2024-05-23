@@ -135,3 +135,7 @@ button {
     --clr-secondary: #202C36;
   }
 }
+
+header {
+  background-color: var(--clr-primary);
+}

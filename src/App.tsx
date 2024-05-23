@@ -8,6 +8,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 import ColorModeProvider from "./context/ColorModeContext";
+import "./App.css"
 
 export default function App() {
   const router = createBrowserRouter(
