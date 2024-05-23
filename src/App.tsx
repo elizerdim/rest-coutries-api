@@ -7,6 +7,7 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
+import ColorModeProvider from "./context/ColorModeContext";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -18,5 +19,9 @@ export default function App() {
     )
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <ColorModeProvider>
+      <RouterProvider router={router} />
+    </ColorModeProvider>
+  );
 }
