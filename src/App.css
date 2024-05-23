@@ -117,3 +117,21 @@ button {
     transition-duration: 0s !important;
   }
 }
+
+/* CUSTOM PROPERTIES */
+:root {
+  --clr-primary: #FFFFFF;
+  --clr-secondary: #F2F2F2;
+}
+
+[data-theme='dark'] {
+  --clr-primary: #2B3844;
+  --clr-secondary: #202C36;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-primary: #2B3844;
+    --clr-secondary: #202C36;
+  }
+}
