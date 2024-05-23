@@ -138,6 +138,62 @@ button {
     --clr-font: #ffffff;
   }
 }
+
+/* UTILITY CLASSES */
+.container {
+  max-width: 80em;
+}
+
+.bg-dark {
+  background-color: var(--clr-primary);
+}
+
+.bg-accent {
+  background-color: var(--clr-secondary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.fw-300 {
+  font-weight: 300; /* light */
+}
+.fw-400 {
+  font-weight: 400; /* regular */
+}
+.fw-600 { 
+  font-weight: 600; /* semibold */
+}
+.fw-800 {  
+  font-weight: 800; /* extrabold */
+}
+
+.fs-12-14 { font-size: 0.75rem }
+.fs-12-16 { font-size: 0.75rem }
+.fs-14 { font-size: 0.875rem }
+.fs-14-16 { font-size: 0.875rem }
+.fs-16 { font-size: 1rem }
+.fs-18 { font-size: 1.125rem }
+.fs-14-24 { font-size: 0.875rem }
+.fs-22-32 { font-size: 1.375rem }
+
+@media only screen and (min-width: 50em) {
+  .fs-12-14 { font-size: 0.875rem }
+  .fs-12-16 { font-size: 1rem }
+  .fs-14-16 { font-size: 1rem }
+  .fs-14-24 { font-size: 1.5rem }
+  .fs-22-32 { font-size: 2rem }
+}
+
 }
 
 header {
