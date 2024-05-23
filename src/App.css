@@ -91,6 +91,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
 /* Remove all default styles from buttons and links but keep the outline for keyboard accessibility */
