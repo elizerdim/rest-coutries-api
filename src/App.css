@@ -31,3 +31,89 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* RESET */
+
+/* modified version of 'a more modern version of CSS reset' by Andy Bell:  */
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set up the body */
+body {
+  line-height: 1.5;
+  min-height: 100svh;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make forms easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all default styles from buttons and links but keep the outline for keyboard accessibility */
+a,
+button {
+  all: unset;
+  outline: revert;
+  cursor: pointer;
+}
+
+/* Remove animations for those who have reduced motion settings on */
+/* From sanitize.css */
+/* https://github.com/csstools/sanitize.css/blob/main/reduce-motion.css */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
