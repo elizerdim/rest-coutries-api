@@ -6,7 +6,7 @@ type ColorModeProviderProps = {
 
 type ColorModeContext = {
   toggleColorMode: () => void;
-  colorMode: string;
+  darkMode: boolean;
 };
 
 export const ColorModeContext = createContext({} as ColorModeContext);
@@ -14,18 +14,17 @@ export const ColorModeContext = createContext({} as ColorModeContext);
 export default function ColorModeProvider({
   children,
 }: ColorModeProviderProps) {
-  const [colorMode, setColorMode] = useState("light");
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   function toggleColorMode() {
-    const newColorMode = colorMode === "light" ? "dark" : "light";
-    setColorMode(newColorMode);
+    setDarkMode(!darkMode);
   }
 
   return (
     <>
       <ColorModeContext.Provider
         value={{
-          colorMode,
+          darkMode,
           toggleColorMode,
         }}
       >

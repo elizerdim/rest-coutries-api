@@ -38,6 +38,7 @@ Users should be able to:
 ## What I learned
 
 - I used ```data-*``` attribute and ```[data-theme='dark']``` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used ```(prefers-color-scheme: dark)``` media rule:
+
   ```css
   :root {
     --clr-primary: #FFFFFF;
@@ -57,11 +58,20 @@ Users should be able to:
   }
   ```
 
+- I named my color mode variable ```colorMode``` first with a string value of "light", but then I decided to name it ```darkMode``` with a boolean value. After I made the changes, I got an error from TypeScript. As I was trying to solve it I realized I forgot to make a bunch of changes, which made me realize how useful and awesome TypeScript is. I appreciate it more now! I also learned the following for explicitly assigning a type to a state variable:
+
+  ```js
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  ```
+
+- 
+
 ## Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 ## Useful resources
 
-- [Easy Dark Mode (and Multiple Color Themes!) in React](https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/) - This helped me figure out how to organize CSS for color mode change from a top level.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Easy Dark Mode (and Multiple Color Themes!) in React](https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/) - This article helped me figure out how to organize CSS for color mode change from a top level.
+- [Dark mode in React: An in-depth guide](https://blog.logrocket.com/dark-mode-react-in-depth-guide/)
+- [Using TypeScript with React (from the React docs)](https://react.dev/learn/typescript)
