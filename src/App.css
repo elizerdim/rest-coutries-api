@@ -122,17 +122,22 @@ button {
 :root {
   --clr-primary: #f2f2f2;
   --clr-secondary: #ffffff;
+  --clr-font: #111517;
 }
 
 [data-theme="dark"] {
   --clr-primary: #202c36;
   --clr-secondary: #2b3844;
+  --clr-font: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-primary: #202c36;
     --clr-secondary: #2b3844;
+    --clr-font: #ffffff;
+  }
+}
 }
 
 header {
