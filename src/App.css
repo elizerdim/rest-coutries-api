@@ -223,3 +223,7 @@ header > button {
   margin-right: .5rem;
   font-size: 1rem;
 }
+
+.block {
+  display: block;
+}
