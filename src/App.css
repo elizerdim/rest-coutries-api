@@ -195,8 +195,32 @@ button {
   .fs-22-32 { font-size: 2rem }
 }
 
+/* GENERAL STYLES */
+:root {
+  font-family: "Nunito Sans", sans-serif;
+  /* TODO: remove this property after you're done */
+  /* font-size: 150%; */
 }
 
 header {
   background-color: var(--clr-primary);
+  color: var(--clr-font);
+}
+
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.875rem 1rem;
+  margin: 0 auto;
+}
+
+header > button {
+  text-align: right;
+}
+
+.mode-btn-icon {
+  margin-right: .5rem;
+  margin-bottom: -.1rem;
+  font-size: 1rem;
 }
