@@ -1,5 +1,13 @@
-export default function CountriesDisplay() {
+import Country from "../interfaces/Country"
+
+type CountriesDisplayProps = {
+  countries: Country[];
+}
+
+export default function CountriesDisplay({countries}: CountriesDisplayProps) {
   return (
-    <div>CountriesDisplay</div>
+    <>
+      {countries.map(country => <p>{country.name.common}</p>)}
+    </>
   )
 }

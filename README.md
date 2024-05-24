@@ -68,6 +68,17 @@ Users should be able to:
 
 - Using [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
 
+- How to use interface to define an object with unknown properties 
+  ```js
+  export default interface Country {
+    name: {
+      common: string;
+      [propName: string]: string | object;
+    };
+    [propName: string]: string | boolean | number | object;
+  }
+  ```
+
 - I tried to use ```git rebase``` on a published commit (I didn't realize it was already published) and also tried ```git stash``` because I had unstaged changes, and it did not go well. I have a duplicate commit and an unnecessary merge on this project now, and I guess my best option at this point is to just leave them be.
 
 ## Continued development
@@ -79,4 +90,5 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Easy Dark Mode (and Multiple Color Themes!) in React](https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/) - This article helped me figure out how to organize CSS for color mode change from a top level.
 - [Dark mode in React: An in-depth guide](https://blog.logrocket.com/dark-mode-react-in-depth-guide/)
 - [Using TypeScript with React (from the React docs)](https://react.dev/learn/typescript)
-- [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
+- [Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks) - How to use interface to define an object with unknown properties 
+- [git stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
