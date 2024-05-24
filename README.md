@@ -68,6 +68,7 @@ Users should be able to:
 
 - Using [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
 
+- I tried to use ```git rebase``` on a published commit (I didn't realize it was already published) and also tried ```git stash``` because I had unstaged changes, and it did not go well. I have a duplicate commit and an unnecessary merge on this project now, and I guess my best option at this point is to just leave them be.
 
 ## Continued development
 
