@@ -64,7 +64,9 @@ Users should be able to:
   const [darkMode, setDarkMode] = useState<boolean>(false);
   ```
 
-- 
+- ```Git: Stage Selected Ranges```!!! Thanks to this stack overflow [entry](https://stackoverflow.com/a/65649756), I discovered this godsent command in VS Code. I had been struggling with ```git add -patch``` and ```git add -e```, and the hunks that just could not be made smaller with ```s```. But I added a custom keybinding (Ctrl + Alt + K) to this amazing command, and now I am not terrified by the idea of dividing the changes I made into smaller commits anymore. I feel that my commits will be much cleaner from now on!
+
+- Using Font Awesome with React (link is in the Useful resources section below)
 
 ## Continued development
 
@@ -75,3 +77,4 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Easy Dark Mode (and Multiple Color Themes!) in React](https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/) - This article helped me figure out how to organize CSS for color mode change from a top level.
 - [Dark mode in React: An in-depth guide](https://blog.logrocket.com/dark-mode-react-in-depth-guide/)
 - [Using TypeScript with React (from the React docs)](https://react.dev/learn/typescript)
+- [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
