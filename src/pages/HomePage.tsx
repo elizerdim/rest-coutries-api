@@ -5,7 +5,12 @@ import SelectList from "../components/SelectList";
 import Country from "../interfaces/Country";
 
 export default function HomePage() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [countries, setCountries] = useState([]);
+
+  const filteredCountries = countries.filter((country: Country) =>
+    country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   useEffect(() => {
     async function getCountries() {
@@ -20,11 +25,15 @@ export default function HomePage() {
     getCountries();
   }, []);
 
+  function handleChange(e: React.FormEvent<HTMLInputElement>) {
+    setSearchQuery(e.currentTarget.value);
+  }
+
   return (
     <main>
-      <SearchBar />
+      <SearchBar query={searchQuery} onChange={handleChange} />
       <SelectList />
-      <CountriesDisplay countries={countries} />
+      <CountriesDisplay countries={filteredCountries || countries} />
     </main>
   );
 }
