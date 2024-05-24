@@ -1,13 +1,17 @@
-import Country from "../interfaces/Country"
+import Country from "../interfaces/Country";
 
 type CountriesDisplayProps = {
   countries: Country[];
-}
+};
 
-export default function CountriesDisplay({countries}: CountriesDisplayProps) {
+export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   return (
     <>
-      {countries.map(country => <p>{country.name.common}</p>)}
+      {countries.map((country) => (
+        <p key={country.name.official.toLowerCase().split(" ").join("-")}>
+          {country.name.common}
+        </p>
+      ))}
     </>
-  )
+  );
 }

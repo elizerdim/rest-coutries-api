@@ -26,14 +26,15 @@ Users should be able to:
 
 ## Built with
 
+- React
+- TypeScript
+- React Select npm package
+- [Rest Countries API](https://restcountries.com/)
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 ## What I learned
 
@@ -82,6 +83,12 @@ Users should be able to:
   ```
 
 - I tried to use ```git rebase``` on a published commit (I didn't realize it was already published) and also tried ```git stash``` because I had unstaged changes, and it did not go well. I have a duplicate commit and an unnecessary merge on this project now, and I guess my best option at this point is to just leave them be.
+
+- It seems that ```export default``` is not allowed before a ```type```: [export default type #41409 from TypeScript issues page](https://github.com/microsoft/TypeScript/issues/41409) - made myself crazy looking for my mistake for a moment there
+
+- react-select npm package
+
+- [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as ```<select>``` and ```<option>```, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
 
 ## Continued development
 

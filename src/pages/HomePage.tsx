@@ -3,14 +3,24 @@ import CountriesDisplay from "../components/CountriesDisplay";
 import SearchBar from "../components/SearchBar";
 import SelectList from "../components/SelectList";
 import Country from "../interfaces/Country";
+import RegionOption from "../types/RegionOption";
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<Country[] | []>([]);
+  const [selectedRegion, setSelectedRegion] = useState<RegionOption | null>(null);
 
-  const filteredCountries = countries.filter((country: Country) =>
-    country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
+  const selectedRegionCountries = selectedRegion && countries.filter(
+    (country: Country) => country.region.toLowerCase() === selectedRegion.value
   );
+
+  const filteredCountries = selectedRegionCountries
+    ? selectedRegionCountries.filter((country) =>
+        country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : countries.filter((country: Country) =>
+        country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
   useEffect(() => {
     async function getCountries() {
@@ -32,7 +42,7 @@ export default function HomePage() {
   return (
     <main>
       <SearchBar query={searchQuery} onChange={handleChange} />
-      <SelectList />
+      <SelectList onChange={setSelectedRegion} />
       <CountriesDisplay countries={filteredCountries || countries} />
     </main>
   );
