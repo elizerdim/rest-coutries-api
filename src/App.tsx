@@ -3,7 +3,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  LoaderFunction,
   LoaderFunctionArgs,
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
@@ -13,6 +12,7 @@ import ColorModeProvider from "./context/ColorModeContext";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Country from "./interfaces/Country";
+import countryLoader from "./utils/countryLoader";
 
 export default function App() {
   const [countries, setCountries] = useState<Country[] | []>([]);
@@ -30,18 +30,17 @@ export default function App() {
     getCountries();
   }, []);
 
-  const countryLoader: LoaderFunction = ({params}: LoaderFunctionArgs): Country => {
-    const country = countries.find(
-      (c) => c.name.common.toLowerCase().split(" ").join("-") === params.id
-    )!;
-    return country;
-  }
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage countries={countries} />} />
-        <Route path="/:id" element={<DetailPage />} loader={countryLoader} />
+        <Route
+          path="/:id"
+          element={<DetailPage />}
+          loader={({ request, params }: LoaderFunctionArgs) =>
+            countryLoader(countries, { request, params })
+          }
+        />
       </Route>
     )
   );

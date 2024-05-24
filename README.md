@@ -92,6 +92,27 @@ Users should be able to:
 
 - I discovered ```LoaderFunction``` and ```LoaderFunctionArgs``` types for TypeScript.
 
+- I also figured out how to pass an extra parameter to the loader function so that I can put it into its own file:
+
+  ```js
+  // arrow function inside the Router element
+  <Route
+    path="/:id"
+    element={<DetailPage />}
+    loader={({ request, params }: LoaderFunctionArgs) =>
+      countryLoader(countries, { request, params })
+    }
+  />
+
+  // utility function in the countryLoader.ts file
+  const countryLoader = (countries: Country[], {params}: LoaderFunctionArgs): Country => {
+  const country = countries.find(
+      (c) => c.name.common.toLowerCase().split(" ").join("-") === params.id
+    )!;
+    return country;
+  }
+  ```
+
 ## Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
