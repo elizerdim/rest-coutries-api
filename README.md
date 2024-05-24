@@ -90,6 +90,8 @@ Users should be able to:
 
 - [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as ```<select>``` and ```<option>```, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
 
+- I discovered ```LoaderFunction``` and ```LoaderFunctionArgs``` types for TypeScript.
+
 ## Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
