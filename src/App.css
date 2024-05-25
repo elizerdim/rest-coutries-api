@@ -125,6 +125,7 @@ button {
   --clr-secondary: #ffffff;
   --clr-font: #111517;
   --clr-box-shadow: lightgray;
+  --clr-placeholder: #797979;
 }
 
 [data-theme="dark"] {
@@ -132,6 +133,7 @@ button {
   --clr-secondary: #2b3844;
   --clr-font: #ffffff;
   --clr-box-shadow: #151616;
+  --clr-placeholder: #c5c5c5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -140,6 +142,7 @@ button {
     --clr-secondary: #2b3844;
     --clr-font: #ffffff;
     --clr-box-shadow: black;
+    --clr-placeholder: #f2f2f2;
   }
 }
 
