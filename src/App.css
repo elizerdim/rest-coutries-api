@@ -151,7 +151,7 @@ button {
   display: block;
 }
 
-.bg-dark {
+.bg-main {
   background-color: var(--clr-primary);
 }
 
