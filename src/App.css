@@ -206,6 +206,7 @@ button {
   /* font-size: 150%; */
 }
 
+/* COMPONENTS */
 header {
   background-color: var(--clr-primary);
   color: var(--clr-font);
