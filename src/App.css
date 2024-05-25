@@ -207,6 +207,7 @@ button {
 }
 
 /* COMPONENTS */
+/* Header */
 header {
   background-color: var(--clr-secondary);
   color: var(--clr-font);
