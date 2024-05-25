@@ -213,14 +213,13 @@ button {
 header {
   background-color: var(--clr-secondary);
   color: var(--clr-font);
+  padding: 1.875rem 0;
 }
 
 header > .container {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.875rem 1rem;
-  margin: 0 auto;
 }
 
 header > button {
