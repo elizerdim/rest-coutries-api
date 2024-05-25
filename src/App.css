@@ -145,6 +145,10 @@ button {
   max-width: 80em;
 }
 
+.block {
+  display: block;
+}
+
 .bg-dark {
   background-color: var(--clr-primary);
 }
@@ -222,8 +226,4 @@ header > button {
 .mode-btn-icon {
   margin-right: .5rem;
   font-size: 1rem;
-}
-
-.block {
-  display: block;
 }
