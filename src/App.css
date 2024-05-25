@@ -239,3 +239,35 @@ button {
   margin-right: .5rem;
   font-size: 1rem;
 }
+
+/* SearchBar */
+.searchbar {
+  border-radius: .3em;
+  margin: 1.5rem 0;
+  box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
+}
+
+.searchbar-icon {
+  padding-left: 2rem;
+  vertical-align: middle;
+}
+
+.searchbar-input {
+  border: none;
+  background-color: inherit;
+  padding: 1rem 0 1rem 1.625rem;
+  width: 80%;
+}
+
+.searchbar-icon,
+.searchbar-input::placeholder {
+  color: var(--clr-placeholder);
+}
+
+.searchbar-input:focus {
+  outline: none;
+}
+
+.searchbar:focus-within {
+  outline: 2px solid var(--clr-font);
+}

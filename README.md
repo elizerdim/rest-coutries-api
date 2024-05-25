@@ -26,6 +26,7 @@ Users should be able to:
 
 ## Built with
 
+<!-- TODO: Fix this list -->
 - React
 - TypeScript
 - React Select npm package
@@ -113,9 +114,38 @@ Users should be able to:
   }
   ```
 
+- CSS ```::placeholder``` pseudo-element:
+
+  ```css
+  .searchbar-icon,
+  .searchbar-input::placeholder {
+    color: var(--clr-placeholder);
+  }
+  ```
+- CSS ```:focus-within``` pseudo-class:
+
+  ```css
+  .searchbar-input:focus {
+    outline: none;
+  }
+
+  .searchbar:focus-within {
+    outline: 2px solid var(--clr-font);
+  }
+  ```
+  I really hope visually changing focus styles in this way doesn't mess up the screen readers; I couldn't find an explanation online but will look into it further.
+
+- I gained a better understanding of box-shadow: ```<blur-radius>``` (3rd value) makes the shadow bigger and lighter and ```<spread-radius>``` makes the shadow bigger or smaller depending on the value, which can be positive or negative. I used a negative value for this one for the first time.
+
+  ```css
+  .searchbar {
+    box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
+  }
+  ```
+
 ## Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Find out if changing focus styles affect screen readers.
 
 ## Useful resources
 
