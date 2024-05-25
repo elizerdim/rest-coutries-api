@@ -211,7 +211,6 @@ button {
 /* COMPONENTS */
 /* Header */
 .main-header {
-  background-color: var(--clr-secondary);
   color: var(--clr-font);
   padding: 1.875rem 0;
 }
