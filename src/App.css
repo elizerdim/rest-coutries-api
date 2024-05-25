@@ -159,6 +159,10 @@ button {
   background-color: var(--clr-secondary);
 }
 
+.text-clr {
+  color: var(--clr-font);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -211,7 +215,6 @@ button {
 /* COMPONENTS */
 /* Header */
 .main-header {
-  color: var(--clr-font);
   padding: 1.875rem 0;
 }
 
