@@ -222,11 +222,11 @@ button {
   gap: 1rem;
 }
 
-.main-header > button {
+.clr-mode-btn {
   text-align: right;
 }
 
-.mode-btn-icon {
+.clr-mode-btn-icon {
   margin-right: .5rem;
   font-size: 1rem;
 }

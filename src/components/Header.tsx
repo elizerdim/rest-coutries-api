@@ -11,11 +11,11 @@ export default function Header() {
     <header className="main-header" data-theme={darkMode ? "dark" : ""}>
       <div className="container">
         <h1 className="fs-14-24 fw-800">Where in the world?</h1>
-        <button className="fs-12-16 fw-600" onClick={toggleColorMode}>
+        <button className="fs-12-16 fw-600 clr-mode-btn" onClick={toggleColorMode}>
           {darkMode ? (
-            <FontAwesomeIcon icon={faSun} className="mode-btn-icon" />
+            <FontAwesomeIcon icon={faSun} className="clr-mode-btn-icon" />
           ) : (
-            <FontAwesomeIcon icon={faMoon} className="mode-btn-icon" />
+            <FontAwesomeIcon icon={faMoon} className="clr-mode-btn-icon" />
           )}
           {darkMode ? "Light" : "Dark"} Mode
         </button>
