@@ -124,12 +124,14 @@ button {
   --clr-primary: #f2f2f2;
   --clr-secondary: #ffffff;
   --clr-font: #111517;
+  --clr-box-shadow: lightgray;
 }
 
 [data-theme="dark"] {
   --clr-primary: #202c36;
   --clr-secondary: #2b3844;
   --clr-font: #ffffff;
+  --clr-box-shadow: #151616;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -137,6 +139,7 @@ button {
     --clr-primary: #202c36;
     --clr-secondary: #2b3844;
     --clr-font: #ffffff;
+    --clr-box-shadow: black;
   }
 }
 
@@ -216,6 +219,7 @@ button {
 /* Header */
 .main-header {
   padding: 1.875rem 0;
+  box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
 }
 
 .main-header > .container {
