@@ -210,19 +210,19 @@ button {
 
 /* COMPONENTS */
 /* Header */
-header {
+.main-header {
   background-color: var(--clr-secondary);
   color: var(--clr-font);
   padding: 1.875rem 0;
 }
 
-header > .container {
+.main-header > .container {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
 
-header > button {
+.main-header > button {
   text-align: right;
 }
 

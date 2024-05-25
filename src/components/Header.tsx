@@ -8,7 +8,7 @@ export default function Header() {
   const { darkMode, toggleColorMode } = useContext(ColorModeContext);
 
   return (
-    <header data-theme={darkMode ? "dark" : ""}>
+    <header className="main-header" data-theme={darkMode ? "dark" : ""}>
       <div className="container">
         <h1 className="fs-14-24 fw-800">Where in the world?</h1>
         <button className="fs-12-16 fw-600" onClick={toggleColorMode}>
