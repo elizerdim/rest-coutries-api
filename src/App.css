@@ -208,7 +208,7 @@ button {
 
 /* COMPONENTS */
 header {
-  background-color: var(--clr-primary);
+  background-color: var(--clr-secondary);
   color: var(--clr-font);
 }
 
