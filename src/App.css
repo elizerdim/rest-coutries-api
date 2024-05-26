@@ -141,7 +141,7 @@ button {
     --clr-primary: #202c36;
     --clr-secondary: #2b3844;
     --clr-font: #ffffff;
-    --clr-box-shadow: black;
+    --clr-box-shadow: #151616;
     --clr-placeholder: #f2f2f2;
   }
 }
