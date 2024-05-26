@@ -15,12 +15,12 @@ type SelectListProps = {
 };
 
 export default function SelectList({ onChange }: SelectListProps) {
-  const [ariaFocusMessage, setAriaFocusMessage] = useState('');
+  const [ariaFocusMessage, setAriaFocusMessage] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onFocus: AriaOnFocus<RegionOption> = ({ focused, isDisabled }) => {
     const msg = `You are currently focused on option ${focused.label}${
-      isDisabled ? ', disabled' : ''
+      isDisabled ? ", disabled" : ""
     }`;
     setAriaFocusMessage(msg);
     return msg;
@@ -31,29 +31,31 @@ export default function SelectList({ onChange }: SelectListProps) {
 
   return (
     <form>
-      <label className="sr-only" id="aria-label" htmlFor="region-select">
-        Filter by Region
-      </label>
-
-      {!!ariaFocusMessage && !!isMenuOpen && (
-        <blockquote className="sr-only">"{ariaFocusMessage}"</blockquote>
-      )}
-
-      <Select
-        // className="select-component"
-        options={options}
-        onChange={onChange}
-        placeholder="Filter by Region"
-        isSearchable={false}
-        aria-labelledby="aria-label"
-        ariaLiveMessages={{
-          onFocus,
-        }}
-        inputId="region-select"
-        name="aria-live-region"
-        onMenuOpen={onMenuOpen}
-        onMenuClose={onMenuClose}
-      />
+      <div className="container">
+        <label className="sr-only" id="aria-label" htmlFor="region-select">
+          Filter by Region
+        </label>
+        {!!ariaFocusMessage && !!isMenuOpen && (
+          <blockquote className="sr-only">"{ariaFocusMessage}"</blockquote>
+        )}
+        <Select
+          unstyled
+          className="select-container fs-12-14"
+          classNamePrefix="select"
+          options={options}
+          onChange={onChange}
+          placeholder="Filter by Region"
+          isSearchable={false}
+          aria-labelledby="aria-label"
+          ariaLiveMessages={{
+            onFocus,
+          }}
+          inputId="region-select"
+          name="aria-live-region"
+          onMenuOpen={onMenuOpen}
+          onMenuClose={onMenuClose}
+        />
+      </div>
     </form>
   );
 }

@@ -271,3 +271,53 @@ button {
 .searchbar:focus-within {
   outline: 2px solid var(--clr-font);
 }
+
+/* SelectList */
+/* TODO: Add focus and hover styles */
+.select-container {
+  width: 17em;
+}
+
+.select-container > * {
+  background-color: var(--clr-secondary);
+  color: inherit;
+}
+
+.select__control,
+.select__menu {
+  border-radius: .5em;
+}
+
+.select__control {
+  padding: .8rem 1rem .8rem 1.5rem;
+}
+
+.select__indicator,
+.select__option {
+  cursor: pointer;
+}
+
+.select__menu {
+  margin-top: .25rem;
+}
+
+.select__menu-list {
+  padding: .5rem 1rem;
+}
+
+.select__option {
+  padding: .25rem 0;
+}
+
+.select__placeholder,
+.select__dropdown-indicator {
+  color: var(--clr-font)
+}
+
+.select__placeholder {
+  color: var(--clr-font);
+}
+
+.select__dropdown-indicator {
+  width: 1.1em;
+}

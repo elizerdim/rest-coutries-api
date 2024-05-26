@@ -143,6 +143,8 @@ Users should be able to:
   }
   ```
 
+- How to style React Select element with [classNamePrefix prop](https://react-select.com/styles#the-classnameprefix-prop)
+
 ## Continued development
 
 - Find out if changing focus styles affect screen readers.
