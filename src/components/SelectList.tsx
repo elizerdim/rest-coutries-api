@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import Select, { AriaOnFocus } from "react-select";
 import RegionOption from "../types/RegionOption";
+import { ColorModeContext } from "../context/ColorModeContext";
 
 const options: RegionOption[] = [
   { value: "africa", label: "Africa" },
@@ -15,6 +16,7 @@ type SelectListProps = {
 };
 
 export default function SelectList({ onChange }: SelectListProps) {
+  const { darkMode } = useContext(ColorModeContext);
   const [ariaFocusMessage, setAriaFocusMessage] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,6 +32,9 @@ export default function SelectList({ onChange }: SelectListProps) {
   const onMenuClose = () => setIsMenuOpen(false);
 
   return (
+    // TODO: remove form tags both from here and from SearchBar and put one form element to the wrapper component you will create as their parent
+    // TODO: Add an option for default - going back to all countries
+    // BONUST TODO: Add multiselect to see countries from multiple selections
     <form>
       <div className="container">
         <label className="sr-only" id="aria-label" htmlFor="region-select">
@@ -39,9 +44,15 @@ export default function SelectList({ onChange }: SelectListProps) {
           <blockquote className="sr-only">"{ariaFocusMessage}"</blockquote>
         )}
         <Select
-          unstyled
-          className="select-container fs-12-14"
+          className="select-container fs-12-14 text-clr"
           classNamePrefix="select"
+          theme={(theme) => ({
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary25: darkMode ? '#1759af' : '#deebff',
+            },
+          })}
           options={options}
           onChange={onChange}
           placeholder="Filter by Region"
