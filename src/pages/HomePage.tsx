@@ -4,18 +4,24 @@ import SearchBar from "../components/SearchBar";
 import SelectList from "../components/SelectList";
 import Country from "../interfaces/Country";
 import RegionOption from "../types/RegionOption";
+import FormWrapper from "../components/FormWrapper";
 
 type HomePageProps = {
   countries: Country[];
-}
+};
 
-export default function HomePage({countries}: HomePageProps) {
+export default function HomePage({ countries }: HomePageProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState<RegionOption | null>(null);
-
-  const selectedRegionCountries = selectedRegion && countries.filter(
-    (country: Country) => country.region.toLowerCase() === selectedRegion.value
+  const [selectedRegion, setSelectedRegion] = useState<RegionOption | null>(
+    null
   );
+
+  const selectedRegionCountries =
+    selectedRegion &&
+    countries.filter(
+      (country: Country) =>
+        country.region.toLowerCase() === selectedRegion.value
+    );
 
   const filteredCountries = selectedRegionCountries
     ? selectedRegionCountries.filter((country) =>
@@ -31,8 +37,10 @@ export default function HomePage({countries}: HomePageProps) {
 
   return (
     <main>
-      <SearchBar query={searchQuery} onChange={handleChange} />
-      <SelectList onChange={setSelectedRegion} />
+      <FormWrapper>
+        <SearchBar query={searchQuery} onChange={handleChange} />
+        <SelectList onChange={setSelectedRegion} />
+      </FormWrapper>
       <CountriesDisplay countries={filteredCountries || countries} />
     </main>
   );

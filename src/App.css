@@ -254,7 +254,7 @@ button {
   border-radius: .3em;
   margin: 1.5rem 0;
   box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
-  max-width: 25em;
+  max-width: 30em;
 }
 
 .searchbar-icon {
@@ -324,4 +324,16 @@ button {
 
 .select__option {
   padding: .4rem 1.5rem !important;
+}
+
+/* FormWrapper */
+@media only screen and (min-width: 50em) {
+  .form-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-wrapper > *:first-child {
+    flex-basis: 100%;
+  }
 }

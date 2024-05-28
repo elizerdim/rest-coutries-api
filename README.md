@@ -145,6 +145,8 @@ Users should be able to:
 
 - How to style React Select element with [classNamePrefix prop](https://react-select.com/styles#the-classnameprefix-prop) and [theme object](https://react-select.com/styles#overriding-the-theme). At first, I used ```unstyled``` prop but then decided to keep some of the default styles, mainly so that I don't have to write focus and hover states from scratch, so I used a combination of the two methods with ```!important``` flags in my CSS.
 
+- ```<search>``` element cannot go inside ```<form>``` element (according to [W3S Markup Validation Service](https://validator.w3.org/))
+
 ## Continued development
 
 - Find out if changing focus styles affect screen readers.
