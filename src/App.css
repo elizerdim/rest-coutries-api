@@ -231,14 +231,17 @@ button {
 .main-header > .container {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .25rem;
 }
 
 .clr-mode-btn {
   text-align: right;
   padding: .5rem 1rem;
-  margin-top: -.5rem;
+  margin-top: -.35rem;
   margin-right: -.75rem;
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
 }
 
 .clr-mode-btn-icon {
