@@ -5,5 +5,12 @@ export default interface Country {
     [propName: string]: string | object;
   };
   region: string;
-  [propName: string]: string | boolean | number | object;
+  flags: {
+    png: string;
+    svg: string;
+    alt: string;
+  };
+  population: number;
+  capital?: string[];
+  [propName: string]: string | boolean | number | object | undefined;
 }
