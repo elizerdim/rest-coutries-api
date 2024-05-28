@@ -250,23 +250,25 @@ button {
 }
 
 /* SearchBar */
+/* TODO: right side doesn't have border-radius - fix */
 .searchbar {
   border-radius: .3em;
   margin: 1.5rem 0;
   box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
   max-width: 30em;
+  display: flex;
+  align-items: center;
 }
 
 .searchbar-icon {
   padding-left: 2rem;
-  vertical-align: middle;
 }
 
 .searchbar-input {
   border: none;
   background-color: inherit;
-  padding: 1rem 0 1rem 1.625rem;
-  width: 85%;
+  padding: 1rem 1rem 1rem 1.625rem;
+  width: 100%;
 }
 
 .searchbar-icon,
