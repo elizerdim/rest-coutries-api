@@ -23,7 +23,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
             {country.name.common}
           </Link>
           <div className="country-info">
-            <p><span className="fw-600">Population:</span> {country.population}</p>
+            <p><span className="fw-600">Population:</span> {country.population.toLocaleString()}</p>
             <p><span className="fw-600">Region:</span> {country.region}</p>
             <p><span className="fw-600">Capital:</span> {country.capital?.[0] || "None"}</p>
           </div>
