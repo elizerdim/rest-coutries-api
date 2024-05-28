@@ -236,6 +236,9 @@ button {
 
 .clr-mode-btn {
   text-align: right;
+  padding: .5rem 1rem;
+  margin-top: -.5rem;
+  margin-right: -.75rem;
 }
 
 .clr-mode-btn-icon {

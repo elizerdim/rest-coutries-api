@@ -6,7 +6,6 @@ import { faSun } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   const { darkMode, toggleColorMode } = useContext(ColorModeContext);
-// TODO: Add padding to dark mode button
   return (
     <header className="main-header bg-accent text-clr" data-theme={darkMode ? "dark" : ""}>
       <div className="container">
