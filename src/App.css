@@ -92,6 +92,7 @@ textarea,
 select {
   font: inherit;
   color: inherit;
+  letter-spacing: inherit;
 }
 
 /* Remove all default styles from buttons and links but keep the outline for keyboard accessibility */
@@ -219,6 +220,7 @@ button {
   font-family: "Nunito Sans", sans-serif;
   /* TODO: remove this property after you're done */
   /* font-size: 150%; */
+  letter-spacing: -.025rem;
 }
 
 /* COMPONENTS */
@@ -338,4 +340,35 @@ button {
   .form-wrapper > *:first-child {
     flex-basis: 100%;
   }
+}
+
+/* CountriesDisplay */
+.display-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.country-card {
+  flex-basis: 16.5em;
+  flex-grow: .2;
+  border-radius: .25em;
+  overflow: hidden;
+}
+
+.country-flag {
+  width: 100%;
+  aspect-ratio: 264 / 160;
+  object-fit: cover;
+}
+
+.country-name {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.country-info {
+  margin: 1rem 1.5rem 2.875rem;
 }
