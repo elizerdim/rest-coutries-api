@@ -34,7 +34,7 @@ export default function SelectList({ onChange }: SelectListProps) {
   return (
     // TODO: remove form tags both from here and from SearchBar and put one form element to the wrapper component you will create as their parent
     // TODO: Add an option for default - going back to all countries
-    // BONUST TODO: Add multiselect to see countries from multiple selections
+    // TODO: (bonus) Add multiselect to see countries from multiple selections
     <form>
       <div className="container">
         <label className="sr-only" id="aria-label" htmlFor="region-select">
