@@ -36,7 +36,7 @@ export default function App() {
         <Route index element={<HomePage countries={countries} />} />
         <Route
           path="/:id"
-          element={<DetailPage />}
+          element={<DetailPage countries={countries} />}
           loader={({ request, params }: LoaderFunctionArgs) =>
             countryLoader(countries, { request, params })
           }

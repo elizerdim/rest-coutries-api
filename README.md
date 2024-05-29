@@ -147,6 +147,8 @@ Users should be able to:
 
 - ```<search>``` element cannot go inside ```<form>``` element (according to [W3S Markup Validation Service](https://validator.w3.org/))
 
+- How to work with APIs: Figuring out the data structure of the API, filtering and mapping through arrays with objects, getting keys and values from objects, using those values as keys to get other values from other objects, and creating an interface with TypeScript from the data structure 
+
 ## Continued development
 
 - Find out if changing focus styles affect screen readers.

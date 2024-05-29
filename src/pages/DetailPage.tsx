@@ -1,9 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Country from "../interfaces/Country";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
-export default function DetailPage() {
+type DetailPageProps = {
+  countries: Country[];
+};
+
+export default function DetailPage({ countries }: DetailPageProps) {
   const country: Country = useLoaderData() as Country;
 
   const languagesKeys = Object.keys(country.languages || {});
@@ -14,6 +18,9 @@ export default function DetailPage() {
 
   const currenciesKeys = Object.keys(country.currencies || {});
   const currencies = currenciesKeys.map((c) => country.currencies?.[c].name);
+
+  const borders = country?.borders;
+  const borderCountries = countries.filter((c) => borders?.includes(c.cca3));
 
   return (
     <main>
@@ -56,6 +63,19 @@ export default function DetailPage() {
           <span className="fw-600">Languages: </span>
           {langauges.join(", ") || <span className="italic">None</span>}
         </p>
+        <p>Border Countries: </p>
+        {borderCountries?.map((borderCountry) => (
+          <Link
+            to={`/${borderCountry.name.common
+              .toLowerCase()
+              .split(" ")
+              .join("-")}`}
+            key={borderCountry.name.official.toLowerCase().split(" ").join("-")}
+            aria-label={`Go to ${borderCountry.name.common}'s page`}
+          >
+            {borderCountry.name.common}
+          </Link>
+        )) || <span className="italic">None</span>}
       </div>
     </main>
   );
