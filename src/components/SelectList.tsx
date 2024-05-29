@@ -34,6 +34,7 @@ export default function SelectList({ onChange }: SelectListProps) {
   return (
     // TODO: Add an option for default - going back to all countries
     // TODO: (bonus) Add multiselect to see countries from multiple selections
+    // TODO: Fix placeholder font color for dark mode
     <div>
       <label className="sr-only" id="aria-label" htmlFor="region-select">
         Filter by Region

@@ -181,7 +181,7 @@ button {
   color: var(--clr-font);
 }
 
-/* TODO: Think about how to organize text-clr throughout the project - there must be a better way than sprinkling class names to elements like font weight or size */
+/* TODO: Think about how to organize text-clr throughout the project - there must be a better way than sprinkling class names to elements like font weight or size -- put it in MainLayout div along with bg-main? */
 
 .sr-only {
   position: absolute;
@@ -353,6 +353,7 @@ main {
 }
 
 /* FormWrapper */
+/* TODO: Add some space between the two components */
 @media only screen and (min-width: 50em) {
   .form-wrapper {
     display: flex;
@@ -373,6 +374,7 @@ main {
   margin-top: 2rem;
 }
 
+/* TODO: Give the cards some max-width so that they don't grow so big */
 .country-card {
   flex-basis: 16.5em;
   flex-grow: .2;
