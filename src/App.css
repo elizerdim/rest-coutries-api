@@ -438,9 +438,9 @@ main {
 
 .country-details__border-link {
   width: fit-content;  
-  padding: .75rem 2rem;
+  padding: .5rem 2rem;
   border-radius: .25em;
-  box-shadow: 0 0 .75em var(--clr-box-shadow);
+  box-shadow: 0 0 .5em .125em var(--clr-box-shadow);
   display: flex;
   align-items: center;
 }
