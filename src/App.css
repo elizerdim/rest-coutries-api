@@ -362,18 +362,18 @@ button {
   overflow: hidden;
 }
 
-.country-flag {
+.country-card__flag {
   width: 100%;
   aspect-ratio: 264 / 160;
   object-fit: cover;
 }
 
-.country-name {
+.country-card__name {
   margin-top: 1.5rem;
   margin-left: 1.5rem;
 }
 
-.country-info {
+.country-card__info {
   margin: 1rem 1.5rem 2.875rem;
 }
 
