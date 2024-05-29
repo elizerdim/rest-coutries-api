@@ -229,6 +229,10 @@ button {
   letter-spacing: -.05rem;
 }
 
+.layout-wrapper {
+  min-height: 100svh;
+}
+
 main {
   padding-bottom: 3.75rem;
 }
