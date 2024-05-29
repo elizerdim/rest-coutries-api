@@ -14,10 +14,10 @@ export default function DetailPage({ countries }: DetailPageProps) {
   const langauges = Object.values(country.languages || {}).reverse();
 
   const nativeName =
-    country.name.nativeName?.[languagesKeys[languagesKeys.length - 1]].common;
+    country.name.nativeName?.[languagesKeys[languagesKeys.length - 1]]?.common;
 
   const currenciesKeys = Object.keys(country.currencies || {});
-  const currencies = currenciesKeys.map((c) => country.currencies?.[c].name);
+  const currencies = currenciesKeys.map((c) => country.currencies?.[c]?.name);
 
   const borders = country?.borders;
   const borderCountries = countries.filter((c) => borders?.includes(c.cca3));
