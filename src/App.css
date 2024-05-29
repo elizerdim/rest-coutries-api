@@ -185,6 +185,10 @@ button {
   border: 0;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .fw-300 {
   font-weight: 300; /* light */
 }
