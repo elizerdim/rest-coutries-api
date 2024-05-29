@@ -224,7 +224,7 @@ button {
   font-family: "Nunito Sans", sans-serif;
   /* TODO: remove this property after you're done */
   /* font-size: 150%; */
-  letter-spacing: -.025rem;
+  letter-spacing: -.05rem;
 }
 
 /* COMPONENTS */
