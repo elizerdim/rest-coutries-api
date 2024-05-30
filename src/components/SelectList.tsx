@@ -4,6 +4,7 @@ import RegionOption from "../types/RegionOption";
 import { ColorModeContext } from "../context/ColorModeContext";
 
 const options: RegionOption[] = [
+  { value: "all", label: "All" },
   { value: "africa", label: "Africa" },
   { value: "americas", label: "Americas" },
   { value: "asia", label: "Asia" },
@@ -32,7 +33,6 @@ export default function SelectList({ onChange }: SelectListProps) {
   const onMenuClose = () => setIsMenuOpen(false);
 
   return (
-    // TODO: Add an option for default - going back to all countries
     // TODO: (bonus) Add multiselect to see countries from multiple selections
     <div>
       <label className="sr-only" id="aria-label" htmlFor="region-select">

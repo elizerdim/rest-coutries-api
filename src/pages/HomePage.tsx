@@ -18,11 +18,13 @@ export default function HomePage({ countries }: HomePageProps) {
 
   const selectedRegionCountries =
     selectedRegion &&
-    countries.filter(
-      (country: Country) =>
-        country.region.toLowerCase() === selectedRegion.value
-    );
-
+    (selectedRegion.value === "all"
+      ? countries
+      : countries.filter(
+          (country: Country) =>
+            country.region.toLowerCase() === selectedRegion.value
+        ));
+        
   const filteredCountries = selectedRegionCountries
     ? selectedRegionCountries.filter((country) =>
         country.name.common.toLowerCase().includes(searchQuery.toLowerCase())
