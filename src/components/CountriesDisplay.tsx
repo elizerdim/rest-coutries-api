@@ -11,9 +11,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   const cards = useRef<HTMLElement[]>([]);
   
   useEffect(() => {
-    // TODO: Is there a better way than using a setTimeout?
-    setTimeout(() => {
-      cards.current?.forEach(card => card?.addEventListener("click", handleClick));
+    cards.current?.forEach(card => card?.addEventListener("click", handleClick));
       
       function handleClick(e: MouseEvent) {
         const isTextSelected = window.getSelection()?.toString();
@@ -23,8 +21,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
         }
       }
       console.log(cards.current);
-    }, 1000);
-  }, [])
+  }, [countries])
 
   return (
     <div className="display-container container text-clr">
