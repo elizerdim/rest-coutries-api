@@ -317,6 +317,9 @@ main {
 .select-container > * {
   background-color: var(--clr-secondary) !important;
   border: none !important;
+}
+
+.select-container * {
   color: inherit !important;
 }
 
