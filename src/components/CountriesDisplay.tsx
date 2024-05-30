@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Country from "../interfaces/Country";
+import kebabCase from 'lodash/kebabCase';
 
 type CountriesDisplayProps = {
   countries: Country[];
@@ -7,7 +8,6 @@ type CountriesDisplayProps = {
 
 export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   return (
-    // TODO: move .toLowerCase().split(" ").join("-") logic to a util function file
     // TODO: make the cards block links https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
     // TODO: Add fw-300 to country-info
     // TODO: Add capital(s) to the ones that have multiple; display all with comma inbetween
@@ -17,7 +17,8 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
       {countries.map((country) => (
         <article
           className="country-card bg-accent"
-          key={country.name.official.toLowerCase().split(" ").join("-")}
+          // TODO: Use cca3 instead of official name
+          key={kebabCase(country.name.official)}
         >
           <img
             className="country-card__flag"
@@ -25,7 +26,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
             alt={country.flags.alt}
           />
           <Link
-            to={`/${country.name.common.toLowerCase().split(" ").join("-")}`}
+            to={`/${kebabCase(country.name.common)}`}
             className="country-card__name block fs-18 fw-800"
           >
             {country.name.common}

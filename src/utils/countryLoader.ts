@@ -2,10 +2,11 @@ import {
   LoaderFunctionArgs,
 } from "react-router-dom";
 import Country from "../interfaces/Country";
+import { kebabCase } from "lodash";
 
 const countryLoader = (countries: Country[], {params}: LoaderFunctionArgs): Country => {
   const country = countries.find(
-    (c) => c.name.common.toLowerCase().split(" ").join("-") === params.id
+    (c) => kebabCase(c.name.common) === params.id
   )!;
   return country;
 }

@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Country from "../interfaces/Country";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { kebabCase } from "lodash";
 
 type DetailPageProps = {
   countries: Country[];
@@ -87,14 +88,8 @@ export default function DetailPage({ countries }: DetailPageProps) {
                 borderCountries?.map((borderCountry) => (
                   <Link
                     className="country-details__border-link bg-accent"
-                    to={`/${borderCountry.name.common
-                      .toLowerCase()
-                      .split(" ")
-                      .join("-")}`}
-                    key={borderCountry.name.official
-                      .toLowerCase()
-                      .split(" ")
-                      .join("-")}
+                    to={`/${kebabCase(borderCountry.name.common)}`}
+                    key={kebabCase(borderCountry.name.official)}
                     aria-label={`Go to ${borderCountry.name.common}'s page`}
                   >
                     {borderCountry.name.common}

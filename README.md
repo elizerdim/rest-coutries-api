@@ -30,6 +30,7 @@ Users should be able to:
 - React
 - TypeScript
 - React Select npm package
+- Lodash npm package
 - [Rest Countries API](https://restcountries.com/)
 - Semantic HTML5 markup
 - CSS custom properties
@@ -108,7 +109,7 @@ Users should be able to:
   // utility function in the countryLoader.ts file
   const countryLoader = (countries: Country[], {params}: LoaderFunctionArgs): Country => {
   const country = countries.find(
-      (c) => c.name.common.toLowerCase().split(" ").join("-") === params.id
+      (c) => kebabCase(c.name.common) === params.id
     )!;
     return country;
   }
