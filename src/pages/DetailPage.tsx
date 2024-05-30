@@ -22,15 +22,13 @@ export default function DetailPage({ countries }: DetailPageProps) {
   const borders = country?.borders;
   const borderCountries = countries.filter((c) => borders?.includes(c.cca3));
 
-  // TODO: Add click functionality to back button
-  // TODO: Make back button a tag instead of button tag
   return (
     <main className="container text-clr fw-300">
       <div className="country-details-container">
-        <button className="back-btn bg-accent fs-14-16 text-clr">
+        <Link to="/" className="back-btn bg-accent fs-14-16 text-clr">
           <FontAwesomeIcon className="back-btn-icon" icon={faArrowLeftLong} />
           Back
-        </button>
+        </Link>
         <div className="country-details-grid">
           <img
             className="country-details__flag"
