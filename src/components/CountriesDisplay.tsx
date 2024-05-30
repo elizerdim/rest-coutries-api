@@ -10,7 +10,6 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   return (
     // TODO: make the cards block links https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
     // TODO: Add capital(s) to the ones that have multiple; display all with comma inbetween
-    // TODO: Make "None" italic with <span className="italic">None</span>
 
     <div className="display-container container text-clr">
       {countries.map((country) => (
@@ -40,7 +39,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
             </p>
             <p>
               <span className="fw-600">Capital:</span>{" "}
-              {country.capital?.[0] || "None"}
+              {country.capital?.[0] || <span className="italic">None</span>}
             </p>
           </div>
         </article>
