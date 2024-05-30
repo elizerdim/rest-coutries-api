@@ -274,9 +274,9 @@ main {
 }
 
 /* SearchBar */
-/* TODO: right side doesn't have border-radius - fix */
 .searchbar {
   border-radius: .3em;
+  overflow: hidden;
   margin: 1.5rem 0;
   box-shadow: 2px 2px 15px -5px var(--clr-box-shadow);
   max-width: 30em;
