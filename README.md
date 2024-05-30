@@ -26,16 +26,17 @@ Users should be able to:
 
 ## Built with
 
-<!-- TODO: Fix this list -->
 - React
 - TypeScript
-- React Select npm package
-- Lodash npm package
-- [Rest Countries API](https://restcountries.com/)
+- React Router
+- react-select npm package
+- lodash npm package
+- [Rest Countries API](https://restcountries.com/)  
+&nbsp;  
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Grid
 - Mobile-first workflow
 
 ## What I learned
