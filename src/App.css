@@ -356,11 +356,11 @@ main {
 }
 
 /* FormWrapper */
-/* TODO: Add some space between the two components */
 @media only screen and (min-width: 50em) {
   .form-wrapper {
     display: flex;
     align-items: center;
+    gap: 1rem;
   }
 
   .form-wrapper > *:first-child {
