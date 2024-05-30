@@ -377,10 +377,10 @@ main {
   margin-top: 2rem;
 }
 
-/* TODO: Give the cards some max-width so that they don't grow so big */
 .country-card {
-  flex-basis: 16.5em;
-  flex-grow: .2;
+  flex-basis: 14em;
+  flex-grow: 1;
+  max-width: 18em;
   border-radius: .25em;
   overflow: hidden;
   cursor: pointer;
