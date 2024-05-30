@@ -9,7 +9,6 @@ type CountriesDisplayProps = {
 export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   return (
     // TODO: make the cards block links https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
-    // TODO: Add fw-300 to country-info
     // TODO: Add capital(s) to the ones that have multiple; display all with comma inbetween
     // TODO: Make "None" italic with <span className="italic">None</span>
 
@@ -31,7 +30,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
           >
             {country.name.common}
           </Link>
-          <div className="country-card__info">
+          <div className="country-card__info fw-300">
             <p>
               <span className="fw-600">Population:</span>{" "}
               {country.population.toLocaleString()}
