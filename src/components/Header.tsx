@@ -6,8 +6,9 @@ import { faSun } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   const { darkMode, toggleColorMode } = useContext(ColorModeContext);
+  
   return (
-    <header className="main-header bg-accent text-clr" data-theme={darkMode ? "dark" : ""}>
+    <header className="main-header bg-accent text-clr">
       <div className="container">
         <h1 className="fs-14-24 fw-800">Where in the world?</h1>
         <button className="fs-12-16 fw-600 clr-mode-btn" onClick={toggleColorMode}>

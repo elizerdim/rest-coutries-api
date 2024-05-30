@@ -1,7 +1,5 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
-import { ColorModeContext } from "../context/ColorModeContext";
 
 type SearchBarProps = {
   query: string;
@@ -9,10 +7,8 @@ type SearchBarProps = {
 };
 
 export default function SearchBar({ query, onChange }: SearchBarProps) {
-  const { darkMode } = useContext(ColorModeContext);
-
   return (
-    <div data-theme={darkMode ? "dark" : ""}>
+    <div>
       <label className="sr-only" htmlFor="search-countries">
         Search for a country
       </label>
