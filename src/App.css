@@ -383,6 +383,7 @@ main {
   flex-grow: .2;
   border-radius: .25em;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .country-card__flag {

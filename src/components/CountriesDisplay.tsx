@@ -1,3 +1,4 @@
+import { useEffect, useRef} from "react";
 import { Link } from "react-router-dom";
 import Country from "../interfaces/Country";
 import kebabCase from 'lodash/kebabCase';
@@ -7,15 +8,32 @@ type CountriesDisplayProps = {
 };
 
 export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
-  return (
-    // TODO: make the cards block links https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
+  const cards = useRef<HTMLElement[]>([]);
+  
+  useEffect(() => {
+    // TODO: Is there a better way than using a setTimeout?
+    setTimeout(() => {
+      cards.current?.forEach(card => card?.addEventListener("click", handleClick));
+      
+      function handleClick(e: MouseEvent) {
+        const isTextSelected = window.getSelection()?.toString();
 
+        if (!isTextSelected) {
+          (e.target as HTMLElement).closest("article")!.querySelector("a")!.click();
+        }
+      }
+      console.log(cards.current);
+    }, 1000);
+  }, [])
+
+  return (
     <div className="display-container container text-clr">
       {countries.map((country) => (
         <article
           className="country-card bg-accent"
           // TODO: Use cca3 instead of official name
           key={kebabCase(country.name.official)}
+          ref={(card: HTMLElement) => cards.current.push(card)}
         >
           <img
             className="country-card__flag"

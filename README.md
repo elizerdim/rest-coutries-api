@@ -150,6 +150,18 @@ Users should be able to:
 
 - How to work with APIs: Figuring out the data structure of the API, filtering and mapping through arrays with objects, getting keys and values from objects, using those values as keys to get other values from other objects, and creating an interface with TypeScript from the data structure 
 
+- [(e.target as HTMLElement)](https://www.reddit.com/r/learnjavascript/comments/hlp4wm/typescript_error_ts2339_property_closest_does_not/)
+
+  ```js
+  function handleClick(e: MouseEvent) {
+        const isTextSelected = window.getSelection()?.toString();
+
+        if (!isTextSelected) {
+          (e.target as HTMLElement).closest("article")!.querySelector("a")!.click();
+        }
+      }
+  ```
+
 ## Continued development
 
 - Find out if changing focus styles affect screen readers.
@@ -162,3 +174,4 @@ Users should be able to:
 - [Sharing State Between Components (from React docs)](https://react.dev/learn/sharing-state-between-components#challenges) - The second challenge shows how to implement a search bar as a component and lift its state to its parent.
 - [Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks) - How to use interface to define an object with unknown properties 
 - [git stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
+- [Block links with JavaScript](https://css-tricks.com/block-links-the-search-for-a-perfect-solution/) - This article shows a pattern for making block links with JavaScript to solve the problems with other approaches.
