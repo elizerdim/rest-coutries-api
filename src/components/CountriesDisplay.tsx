@@ -28,8 +28,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
       {countries.map((country) => (
         <article
           className="country-card bg-accent"
-          // TODO: Use cca3 instead of official name
-          key={kebabCase(country.name.official)}
+          key={country.cca3}
           ref={(card: HTMLElement) => cards.current.push(card)}
         >
           <img

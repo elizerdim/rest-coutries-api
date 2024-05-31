@@ -89,7 +89,7 @@ export default function DetailPage({ countries }: DetailPageProps) {
                   <Link
                     className="country-details__border-link bg-accent"
                     to={`/${kebabCase(borderCountry.name.common)}`}
-                    key={kebabCase(borderCountry.name.official)}
+                    key={borderCountry.cca3}
                     aria-label={`Go to ${borderCountry.name.common}'s page`}
                   >
                     {borderCountry.name.common}
