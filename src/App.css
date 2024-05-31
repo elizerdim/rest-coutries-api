@@ -181,8 +181,6 @@ button {
   color: var(--clr-font);
 }
 
-/* TODO: Think about how to organize text-clr throughout the project - there must be a better way than sprinkling class names to elements like font weight or size -- put it in MainLayout div along with bg-main? */
-
 .sr-only {
   position: absolute;
   width: 1px;

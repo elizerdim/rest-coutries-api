@@ -15,7 +15,7 @@ export default function SearchBar({ query, onChange }: SearchBarProps) {
       <div className="searchbar bg-accent">
         <FontAwesomeIcon icon={faMagnifyingGlass} className="searchbar-icon" />
         <input
-          className="searchbar-input fs-12-14 text-clr"
+          className="searchbar-input fs-12-14"
           type="search"
           id="search-countries"
           placeholder="Search for a country..."

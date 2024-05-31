@@ -42,7 +42,7 @@ export default function SelectList({ onChange }: SelectListProps) {
         <blockquote className="sr-only">"{ariaFocusMessage}"</blockquote>
       )}
       <Select
-        className="select-container fs-12-14 text-clr"
+        className="select-container fs-12-14"
         classNamePrefix="select"
         theme={(theme) => ({
           ...theme,

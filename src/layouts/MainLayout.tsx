@@ -7,7 +7,7 @@ export default function MainLayout() {
   const { darkMode } = useContext(ColorModeContext);
 
   return (
-    <div className="layout-wrapper bg-main" data-theme={darkMode ? "dark" : ""}>
+    <div className="layout-wrapper bg-main text-clr" data-theme={darkMode ? "dark" : ""}>
       <Header />
       <Outlet />
     </div>

@@ -26,7 +26,7 @@ export default function DetailPage({ countries }: DetailPageProps) {
   return (
     <main className="container text-clr fw-300">
       <div className="country-details-container">
-        <Link to="/" className="back-btn bg-accent fs-14-16 text-clr">
+        <Link to="/" className="back-btn bg-accent fs-14-16">
           <FontAwesomeIcon className="back-btn-icon" icon={faArrowLeftLong} />
           Back
         </Link>

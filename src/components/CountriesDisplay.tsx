@@ -24,7 +24,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   }, [countries])
 
   return (
-    <div className="display-container container text-clr">
+    <div className="display-container container">
       {countries.map((country) => (
         <article
           className="country-card bg-accent"
