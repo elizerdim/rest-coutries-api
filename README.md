@@ -163,6 +163,49 @@ Users should be able to:
       }
   ```
 
+- TypeScript `interface` allows additional properties that are not defined by the interface. So I only had to include the properties and values that I used in my code in my Country interface, even though the country objects coming from the API that I pass into my functions include more properties.
+
+- `[propName: string]` can be used in an interface when the key is unknown.
+
+- I spent a lot of time studying the data structure of the API and getting correct values for display, and I wish the dominant language was specified in the data structure. Because both the languages and the native names are objects with the abbreviation of the language as the key and either the language or the native name as values like this: 
+
+  ```js
+  name: {
+    nativeName: {
+      ber: {
+        official: 'Sahrawi Arab Democratic Republic',
+        common: 'Western Sahara'
+      },
+      mey: {
+        official: 'الجمهورية العربية الصحراوية الديمقراطية',
+        common: 'الصحراء الغربية'
+      },
+      spa: {
+        official: 'República Árabe Saharaui Democrática',
+        common: 'Sahara Occidental'
+      }
+    },
+  }
+  languages: { 
+    ber: 'Berber', 
+    mey: 'Hassaniya', 
+    spa: 'Spanish' 
+  },
+  ```
+
+  So, the only way of getting the native name is by using one of the shorthands for the languages. This example is from "Western Sahara" (the name from name.common). There is no way of getting the native name according to the dominant language and 95 out of 250 have multiple languages and native names. I decided to get the keys with Object.keys and use the last key to get the corresponding native name (the last one tends to be the dominant language throughout the data), and if it doesn't exist, then get the first value from the native names with this function:
+
+  ```js
+  function getNativeName(country: Country, languages: string[]) {
+    if (country.name.nativeName) {
+      return country.name.nativeName?.[languages[languages.length - 1]]?.common || 
+      Object.values(country.name?.nativeName)[0].common;
+    } else {
+      return false;
+    }
+  }
+  ```
+
 ## Continued development
 
 - Find out if changing focus styles affect screen readers.

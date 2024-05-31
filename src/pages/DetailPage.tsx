@@ -3,6 +3,7 @@ import Country from "../interfaces/Country";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { kebabCase } from "lodash";
+import getNativeName from "../utils/getNativeName";
 
 type DetailPageProps = {
   countries: Country[];
@@ -11,11 +12,10 @@ type DetailPageProps = {
 export default function DetailPage({ countries }: DetailPageProps) {
   const country: Country = useLoaderData() as Country;
 
-  const languagesKeys = Object.keys(country.languages || {});
-  const langauges = Object.values(country.languages || {}).reverse();
+  const languageKeys = Object.keys(country.languages || {});
+  const languageValues = Object.values(country.languages || {}).reverse();
 
-  const nativeName =
-    country.name.nativeName?.[languagesKeys[languagesKeys.length - 1]]?.common;
+  const nativeName = getNativeName(country, languageKeys);
 
   const currenciesKeys = Object.keys(country.currencies || {});
   const currencies = currenciesKeys.map((c) => country.currencies?.[c]?.name);
@@ -76,7 +76,9 @@ export default function DetailPage({ countries }: DetailPageProps) {
                 </p>
                 <p className="country-details__info ">
                   <span className="fw-600">Languages: </span>
-                  {langauges.join(", ") || <span className="italic">None</span>}
+                  {languageValues.join(", ") || (
+                    <span className="italic">None</span>
+                  )}
                 </p>
               </div>
             </div>
