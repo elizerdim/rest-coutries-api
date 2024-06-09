@@ -41,7 +41,7 @@ Users should be able to:
 
 ## What I learned
 
-- I used ```data-*``` attribute and ```[data-theme='dark']``` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used ```(prefers-color-scheme: dark)``` media rule:
+- I used `data-*` attribute and `[data-theme='dark']` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used `(prefers-color-scheme: dark)` media rule:
 
   ```css
   :root {
@@ -62,17 +62,17 @@ Users should be able to:
   }
   ```
 
-- I named my color mode variable ```colorMode``` first with a string value of "light", but then I decided to name it ```darkMode``` with a boolean value. After I made the changes, I got an error from TypeScript. As I was trying to solve it I realized I forgot to make a bunch of changes, which made me realize how useful and awesome TypeScript is. I appreciate it more now! I also learned the following for explicitly assigning a type to a state variable:
+- I named my color mode variable `colorMode` first with a string value of "light", but then I decided to name it `darkMode` with a boolean value. After I made the changes, I got an error from TypeScript. As I was trying to solve it I realized I forgot to make a bunch of changes, which made me realize how useful and awesome TypeScript is. I appreciate it more now! I also learned the following for explicitly assigning a type to a state variable:
 
   ```js
   const [darkMode, setDarkMode] = useState<boolean>(false);
   ```
 
-- ```Git: Stage Selected Ranges```!!! Thanks to this stack overflow [entry](https://stackoverflow.com/a/65649756), I discovered this godsent command in VS Code. I had been struggling with ```git add -patch``` and ```git add -e```, and the hunks that just could not be made smaller with ```s```. But I added a custom keybinding (Ctrl + Alt + K) to this amazing command, and now I am not terrified by the idea of dividing the changes I made into smaller commits anymore. I feel that my commits will be much cleaner from now on!
+- `Git: Stage Selected Ranges`!!! Thanks to this stack overflow [entry](https://stackoverflow.com/a/65649756), I discovered this godsent command in VS Code. I had been struggling with `git add -patch` and `git add -e`, and the hunks that just could not be made smaller with `s`. But I added a custom keybinding (Ctrl + Alt + K) to this amazing command, and now I am not terrified by the idea of dividing the changes I made into smaller commits anymore. I feel that my commits will be much cleaner from now on!
 
 - Using [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
 
-- The new [HTML ```<search>``` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search)
+- The new [HTML `<search>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search)
 
 - How to use interface to define an object with unknown properties 
   ```js
@@ -85,15 +85,15 @@ Users should be able to:
   }
   ```
 
-- I tried to use ```git rebase``` on a published commit (I didn't realize it was already published) and also tried ```git stash``` because I had unstaged changes, and it did not go well. I have a duplicate commit and an unnecessary merge on this project now, and I guess my best option at this point is to just leave them be.
+- I tried to use `git rebase` on a published commit (I didn't realize it was already published) and also tried `git stash` because I had unstaged changes, and it did not go well. I have a duplicate commit and an unnecessary merge on this project now, and I guess my best option at this point is to just leave them be.
 
-- It seems that ```export default``` is not allowed before a ```type```: [export default type #41409 from TypeScript issues page](https://github.com/microsoft/TypeScript/issues/41409) - made myself crazy looking for my mistake for a moment there
+- It seems that `export default` is not allowed before a `type`: [export default type #41409 from TypeScript issues page](https://github.com/microsoft/TypeScript/issues/41409) - made myself crazy looking for my mistake for a moment there
 
 - react-select npm package
 
-- [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as ```<select>``` and ```<option>```, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
+- [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as `<select>` and `<option>`, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
 
-- I discovered ```LoaderFunction``` and ```LoaderFunctionArgs``` types for TypeScript.
+- I discovered `LoaderFunction` and `LoaderFunctionArgs` types for TypeScript.
 
 - I also figured out how to pass an extra parameter to the loader function so that I can put it into its own file:
 
@@ -116,7 +116,7 @@ Users should be able to:
   }
   ```
 
-- CSS ```::placeholder``` pseudo-element:
+- CSS `::placeholder` pseudo-element:
 
   ```css
   .searchbar-icon,
@@ -124,7 +124,8 @@ Users should be able to:
     color: var(--clr-placeholder);
   }
   ```
-- CSS ```:focus-within``` pseudo-class:
+
+- CSS `:focus-within` pseudo-class:
 
   ```css
   .searchbar-input:focus {
@@ -135,9 +136,10 @@ Users should be able to:
     outline: 2px solid var(--clr-font);
   }
   ```
+  
   I really hope visually changing focus styles in this way doesn't mess up the screen readers; I couldn't find an explanation online but will look into it further.
 
-- I gained a better understanding of box-shadow: ```<blur-radius>``` (3rd value) makes the shadow bigger and lighter and ```<spread-radius>``` makes the shadow bigger or smaller depending on the value, which can be positive or negative. I used a negative value for this one for the first time.
+- I gained a better understanding of box-shadow: `<blur-radius>` (3rd value) makes the shadow bigger and lighter and `<spread-radius>` makes the shadow bigger or smaller depending on the value, which can be positive or negative. I used a negative value for this one for the first time.
 
   ```css
   .searchbar {
@@ -145,9 +147,9 @@ Users should be able to:
   }
   ```
 
-- How to style React Select element with [classNamePrefix prop](https://react-select.com/styles#the-classnameprefix-prop) and [theme object](https://react-select.com/styles#overriding-the-theme). At first, I used ```unstyled``` prop but then decided to keep some of the default styles, mainly so that I don't have to write focus and hover states from scratch, so I used a combination of the two methods with ```!important``` flags in my CSS.
+- How to style React Select element with [classNamePrefix prop](https://react-select.com/styles#the-classnameprefix-prop) and [theme object](https://react-select.com/styles#overriding-the-theme). At first, I used `unstyled` prop but then decided to keep some of the default styles, mainly so that I don't have to write focus and hover states from scratch, so I used a combination of the two methods with `!important` flags in my CSS.
 
-- ```<search>``` element cannot go inside ```<form>``` element (according to [W3S Markup Validation Service](https://validator.w3.org/))
+- `<search>` element cannot go inside `<form>` element (according to [W3S Markup Validation Service](https://validator.w3.org/))
 
 - How to work with APIs: Figuring out the data structure of the API, filtering and mapping through arrays with objects, getting keys and values from objects, using those values as keys to get other values from other objects, and creating an interface with TypeScript from the data structure 
 
@@ -206,9 +208,16 @@ Users should be able to:
   }
   ```
 
+- I wanted to fetch single countries for the DetailPage if the user didn't go through the HomePage and went to the country's page directly from the url, but the data structure of the API listed border countries only with cca3 codes, and I needed their native names for the buttons at the bottom of the page. I didn't want to use another third-party API to get country names from cca3 codes because that would lead to inconsistencies between the data from the two APIs. So I ended up fetching all the countries in App.tsx and passing that on to the page components.
+
+- Not all npm packages can be used with Vite. For example, [@loadable/component](https://www.npmjs.com/package/@loadable/component) is absolutely incompatible with Vite because it uses `Webpack` as bundler and Vite uses `esbuild`. I came across a piece of code that uses @loadable/component, tried it out in my project, and spent a loooong time before figuring out why it didn't work. Oh, well. At least now I have a much better mental model for the differences between bundlers, CommonJS vs. ES Modules in Node.js, require vs. import, etc.
+
+- I was getting an error that said "Cannot update a component (`SelectList`) while rendering a different component (`LiveRegion2`). To locate the bad setState() call inside `LiveRegion2`, follow the stack trace". All the sources on the internet recommended wrapping setState call into useEffect, but that wasn't possible in my case, so I found [this stackoverflow entry](https://stackoverflow.com/a/69236626) and used setTimeout instead. It removed the error.
+
 ## Continued development
 
-- Find out if changing focus styles affect screen readers.
+- Learn more about React design patterns and best practices.
+- Find out if changing focus styles affects screen readers.
 
 ## Useful resources
 

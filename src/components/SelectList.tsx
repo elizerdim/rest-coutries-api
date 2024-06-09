@@ -25,7 +25,12 @@ export default function SelectList({ onChange }: SelectListProps) {
     const msg = `You are currently focused on option ${focused.label}${
       isDisabled ? ", disabled" : ""
     }`;
-    setAriaFocusMessage(msg);
+    
+    // setTimeout is added to remove the error 
+    // "Cannot update a component (`SelectList`) while rendering a different component (`LiveRegion2`). 
+    // To locate the bad setState() call inside `LiveRegion2`, follow the stack trace" 
+    setTimeout(() => setAriaFocusMessage(msg), 0);
+
     return msg;
   };
 
