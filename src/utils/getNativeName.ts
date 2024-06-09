@@ -7,6 +7,6 @@ export default function getNativeName(country: Country, languages: string[]) {
       Object.values(country.name?.nativeName)[0].common
     );
   } else {
-    return false;
+    return null;
   }
 }

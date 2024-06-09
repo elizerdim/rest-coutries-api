@@ -12,7 +12,6 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Country from "./interfaces/Country";
 
-// TODO: Add loading states
 export default function App() {
   const [countries, setCountries] = useState<Country[] | []>([]);
   const [loading, setLoading] = useState(true);
