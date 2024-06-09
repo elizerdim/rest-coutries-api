@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Country from "../interfaces/Country";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
@@ -9,8 +9,9 @@ type DetailPageProps = {
   countries: Country[];
 };
 
-export default function DetailPage({ countries }: DetailPageProps) {
-  const country: Country = useLoaderData() as Country;
+export default function DetailPage({ countries, loading }: DetailPageProps) {
+  const { id } = useParams();
+  const country = countries.find(c => kebabCase(c.name.common) === id)!;
 
   const languageKeys = Object.keys(country.languages || {});
   const languageValues = Object.values(country.languages || {}).reverse();
