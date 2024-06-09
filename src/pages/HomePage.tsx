@@ -5,12 +5,14 @@ import SelectList from "../components/SelectList";
 import Country from "../interfaces/Country";
 import RegionOption from "../types/RegionOption";
 import FormWrapper from "../components/FormWrapper";
+import Spinner from "../components/Spinner";
 
 type HomePageProps = {
   countries: Country[];
+  loading: boolean;
 };
 
-export default function HomePage({ countries }: HomePageProps) {
+export default function HomePage({ countries, loading }: HomePageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState<RegionOption | null>(
     null
@@ -39,11 +41,17 @@ export default function HomePage({ countries }: HomePageProps) {
 
   return (
     <main>
-      <FormWrapper>
-        <SearchBar query={searchQuery} onChange={handleChange} />
-        <SelectList onChange={setSelectedRegion} />
-      </FormWrapper>
-      <CountriesDisplay countries={filteredCountries || countries} />
+      {loading ? (
+        <Spinner loading={loading} />
+      ) : (
+        <>
+          <FormWrapper>
+            <SearchBar query={searchQuery} onChange={handleChange} />
+            <SelectList onChange={setSelectedRegion} />
+          </FormWrapper>
+          <CountriesDisplay countries={filteredCountries || countries} />
+        </>
+      )}
     </main>
   );
 }

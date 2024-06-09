@@ -15,6 +15,7 @@ import Country from "./interfaces/Country";
 // TODO: Add loading states
 export default function App() {
   const [countries, setCountries] = useState<Country[] | []>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getCountries() {
@@ -24,6 +25,8 @@ export default function App() {
         setCountries(data);
       } catch (err) {
         console.error("Failed to fetch data: ", err);
+      } finally {
+        setLoading(false);
       }
     }
     getCountries();
@@ -32,8 +35,8 @@ export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage countries={countries} />} />
-        <Route path="/:id" element={<DetailPage countries={countries} />}
+        <Route index element={<HomePage countries={countries} loading={loading} />} />
+        <Route path="/:id" element={<DetailPage countries={countries} loading={loading} />}
         />
       </Route>
     )
