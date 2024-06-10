@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 type ColorModeProviderProps = {
   children: ReactNode;
@@ -16,8 +16,16 @@ export default function ColorModeProvider({
 }: ColorModeProviderProps) {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (localStorage.getItem('data')) {
+      const savedMode: boolean = JSON.parse(localStorage.getItem('data')!)
+      setDarkMode(savedMode);
+    }
+  }, [])
+
   function toggleColorMode() {
     setDarkMode(!darkMode);
+    localStorage.setItem('data', JSON.stringify(!darkMode));
   }
 
   return (
