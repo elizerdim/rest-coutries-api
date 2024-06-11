@@ -24,7 +24,7 @@ export default function App() {
           referrerPolicy: "strict-origin-when-cross-origin",
           cache: "default",
           headers: {
-            "Cache-Control": "max-age=31536000, immutable"
+            "cache-control": "public, max-age=31560000, immutable"
           }
         });
         const data = await res.json();
