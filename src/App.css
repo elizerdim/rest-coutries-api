@@ -441,6 +441,7 @@ main {
 
 .country-details__border-link {
   width: fit-content;  
+  width: -moz-fit-content;  
   padding: .5rem 2rem;
   border-radius: .25em;
   box-shadow: 0 0 .5em .125em var(--clr-box-shadow);
