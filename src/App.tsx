@@ -20,7 +20,8 @@ export default function App() {
     async function getCountries() {
       try {
         const res = await fetch("https://restcountries.com/v3.1/all", {
-          mode: 'cors'
+          mode: 'cors',
+          referrerPolicy: "strict-origin-when-cross-origin"
         });
         const data = await res.json();
         setCountries(data);
