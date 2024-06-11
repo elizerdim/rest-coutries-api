@@ -152,17 +152,9 @@ button {
 
 /* UTILITY CLASSES */
 .container {
-  margin: 0 auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-@media only screen and (min-width: 50em) {
-  .container {
-    max-width: 80em;
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 75rem;
 }
 
 .block {
