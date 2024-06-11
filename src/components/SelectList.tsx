@@ -38,7 +38,6 @@ export default function SelectList({ onChange }: SelectListProps) {
   const onMenuClose = () => setIsMenuOpen(false);
 
   return (
-    // TODO: (bonus) Add multiselect to see countries from multiple selections
     <div>
       <label className="sr-only" id="aria-label" htmlFor="region-select">
         Filter by Region
