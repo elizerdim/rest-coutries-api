@@ -21,7 +21,8 @@ export default function App() {
       try {
         const res = await fetch("https://restcountries.com/v3.1/all", {
           mode: 'cors',
-          referrerPolicy: "strict-origin-when-cross-origin"
+          referrerPolicy: "strict-origin-when-cross-origin",
+          cache: "default"
         });
         const data = await res.json();
         setCountries(data);
