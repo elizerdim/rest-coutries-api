@@ -19,7 +19,9 @@ export default function App() {
   useEffect(() => {
     async function getCountries() {
       try {
-        const res = await fetch("https://restcountries.com/v3.1/all");
+        const res = await fetch("https://restcountries.com/v3.1/all", {
+          mode: 'cors'
+        });
         const data = await res.json();
         setCountries(data);
       } catch (err) {
