@@ -17,12 +17,12 @@ Users should be able to:
 
 ## Screenshot
 
-![]()
+![](./screenshot.png)
 
 ## Links
 
-- [View Code](https://www.example.com)
-- [Live Preview](https://www.example.com)
+- [View Code](https://github.com/elizerdim/rest-coutries-api)
+- [Live Preview](https://rest-coutries-api-six.vercel.app/)
 
 ## Built with
 
@@ -40,6 +40,8 @@ Users should be able to:
 - Mobile-first workflow
 
 ## What I learned
+
+This project turned out to be quite educational for me. I struggled with quite a few things, spent hours on research, and came out with a deeper understanding of React, React Hooks, asyncronous JavaScript and how to handle it in React, Node.js, Vite, differences between bundlers and npm packages (espacially that not all of them can be used with Vite). Here is of the things I learned (probably not exhaustive):
 
 - I used `data-*` attribute and `[data-theme='dark']` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used `(prefers-color-scheme: dark)` media rule:
 
@@ -62,7 +64,7 @@ Users should be able to:
   }
   ```
 
-- I named my color mode variable `colorMode` first with a string value of "light", but then I decided to name it `darkMode` with a boolean value. After I made the changes, I got an error from TypeScript. As I was trying to solve it I realized I forgot to make a bunch of changes, which made me realize how useful and awesome TypeScript is. I appreciate it more now! I also learned the following for explicitly assigning a type to a state variable:
+- I named my color mode variable `colorMode` first with a string value of `"light"`, but then I decided to name it `darkMode` with a boolean value. After I made the changes, I got an error from TypeScript. As I was trying to solve it I realized I forgot to make a bunch of changes, which made me realize how useful and awesome TypeScript is. I appreciate it more now! I also learned the following for explicitly assigning a type to a state variable:
 
   ```js
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -89,13 +91,11 @@ Users should be able to:
 
 - It seems that `export default` is not allowed before a `type`: [export default type #41409 from TypeScript issues page](https://github.com/microsoft/TypeScript/issues/41409) - made myself crazy looking for my mistake for a moment there
 
-- react-select npm package
-
 - [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as `<select>` and `<option>`, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
 
-- I discovered `LoaderFunction` and `LoaderFunctionArgs` types for TypeScript.
+- I discovered `LoaderFunction` and `LoaderFunctionArgs` types for TypeScript, even though I didn't use a loader in the end. I realized that there are certain TypeScript types that are defined on packages that can be imported and used as is, which is very useful.
 
-- I also figured out how to pass an extra parameter to the loader function so that I can put it into its own file:
+- I also figured out how to pass an extra parameter to the loader function so that I can put it into its own file (again, I ended up not using it but it might be useful to keep it here for future reference):
 
   ```js
   // arrow function inside the Router element
@@ -214,6 +214,14 @@ Users should be able to:
 
 - I was getting an error that said "Cannot update a component (`SelectList`) while rendering a different component (`LiveRegion2`). To locate the bad setState() call inside `LiveRegion2`, follow the stack trace". All the sources on the internet recommended wrapping setState call into useEffect, but that wasn't possible in my case, so I found [this stackoverflow entry](https://stackoverflow.com/a/69236626) and used setTimeout instead. It removed the error.
 
+- Refresh on detail pages gave a 404 error after deployment with Vercel, and I found an article (in the Useful resources below) that suggested adding a vercel.json file to the root directory and adding the following inside it:
+
+  ```js
+  {
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  }
+  ```
+
 ## Continued development
 
 - Learn more about React design patterns and best practices.
@@ -228,3 +236,5 @@ Users should be able to:
 - [Excess Property Checks](https://www.typescriptlang.org/docs/handbook/2/objects.html#excess-property-checks) - How to use interface to define an object with unknown properties 
 - [git stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
 - [Block links with JavaScript](https://css-tricks.com/block-links-the-search-for-a-perfect-solution/) - This article shows a pattern for making block links with JavaScript to solve the problems with other approaches.
+- [How to resolve the 404 not found error in vercel deployments](https://medium.com/@awdhesh1700/how-to-resolve-the-404-not-found-error-in-vercel-deployments-a0fe90c1447a) - I used the second recommendation on this article to fix the 404 Not Found error after deployment with Vercel.
+- [Vercel and security headers](https://manel-lemin.medium.com/take-your-website-to-an-a-with-vercel-and-security-headers-44d13154eda7)
