@@ -53,6 +53,7 @@ export default function SelectList({ onChange }: SelectListProps) {
           colors: {
             ...theme.colors,
             primary25: darkMode ? "#1759af" : "#deebff",
+            primary50: darkMode ? "#106de7" : "#b2d4ff",
           },
         })}
         options={options}
