@@ -1,8 +1,7 @@
 {
-  "rewrites": [
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/",
       "headers": [
         {
           "key": "X-Content-Type-Options",
