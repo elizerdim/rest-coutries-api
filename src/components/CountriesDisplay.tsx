@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
 import Country from "../interfaces/Country";
 import kebabCase from 'lodash/kebabCase';
+import { useEffect, useState } from "react";
 
 type CountriesDisplayProps = {
   countries: Country[];
 };
 
 export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
+  const [displayCountries, setDisplayCountries] = useState(countries);
+
+  useEffect(() => {
+    setDisplayCountries(countries);
+  }, [countries]);
+
   return (
     <div className="display-container container">
-      {countries.map((country) => (
+      {displayCountries.map((country) => (
         <article key={country.cca3}>
           <img
             className="country-card__flag"
