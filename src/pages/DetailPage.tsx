@@ -90,7 +90,7 @@ export default function DetailPage({ countries, loading }: DetailPageProps) {
             <img
               className="country-details__flag"
               src={countryDetails.flagImg}
-              alt={countryDetails.flagAltText}
+              alt="hello"
             />
             <div className="country-details__right-col">
               <h2 className="country-details__title fw-800 fs-22-32">
