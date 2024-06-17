@@ -14,7 +14,7 @@ type DetailPageProps = {
 
 type CountryDetails = {
   flagImg: string;
-  flagAltText: string;
+  flagAltText: string | null;
   commonName: string;
   nativeName: string | null;
   population: string;
@@ -22,7 +22,7 @@ type CountryDetails = {
   subregion: string | null;
   capital: string | null;
   tld: string | null;
-  currencies: string;
+  currencies: string | null;
   languages: string;
   borderCountries: Country[];
 };
@@ -37,7 +37,7 @@ export default function DetailPage({ countries, loading }: DetailPageProps) {
     async function getCountry() {
       if (countries.length > 0) {
         try {
-          const country = await countries.find(
+          const country: Country = await countries.find(
             (c) => kebabCase(c.name.common) === id
           )!;
 
@@ -52,7 +52,7 @@ export default function DetailPage({ countries, loading }: DetailPageProps) {
 
           const countryDetails = {
             flagImg: country.flags.png,
-            flagAltText: country.flags.alt,
+            flagAltText: country.flags?.alt || null,
             commonName: country.name.common,
             nativeName: getNativeName(country, languageKeys),
             population: country.population.toLocaleString(),
@@ -60,7 +60,7 @@ export default function DetailPage({ countries, loading }: DetailPageProps) {
             subregion: country?.subregion || null,
             capital: country.capital?.[0] || null,
             tld: country.tld?.[0] || null,
-            currencies: currencies.join(", "),
+            currencies: currencies?.join(", ") || null,
             languages: languageValues.join(", "),
             borderCountries: countries.filter((c) =>
               country?.borders?.includes(c.cca3)
@@ -90,7 +90,7 @@ export default function DetailPage({ countries, loading }: DetailPageProps) {
             <img
               className="country-details__flag"
               src={countryDetails.flagImg}
-              alt="hello"
+              alt={countryDetails.flagAltText || `${countryDetails.nativeName}'s flag`}
             />
             <div className="country-details__right-col">
               <h2 className="country-details__title fw-800 fs-22-32">

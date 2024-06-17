@@ -10,7 +10,7 @@ export default interface Country {
   region: string;
   flags: {
     png: string;
-    alt: string;
+    alt?: string;
   };
   population: number;
   capital?: string[];
