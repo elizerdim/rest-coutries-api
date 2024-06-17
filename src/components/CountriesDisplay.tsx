@@ -14,7 +14,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
           <img
             className="country-card__flag"
             src={country.flags.png}
-            alt={country.flags.alt}
+            alt={country.flags.alt || `${country.name.common}'s flag`}
           />
           <Link
             to={`/${kebabCase(country.name.common)}`}
