@@ -462,6 +462,13 @@ main {
   align-items: center;
 }
 
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .country-details__border-link:hover {
+    background-color: var(--clr-box-shadow);
+  }
+}
+
 @media only screen and (min-width: 32em) {
   .country-details-grid {
     width: 70%;
