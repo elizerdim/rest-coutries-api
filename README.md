@@ -7,13 +7,15 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 Users should be able to:
 
 - See all countries from the API on the homepage
-- Search for a country using an input field
+- Search for a country using the input field
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
+- Refresh the page on the country detail pages
 - Click through to the border countries on the detail page
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- **Bonus:** Toggle the color scheme between light and dark mode
+- Have screen readers read the focused region on the filter field
+- **Bonus:** Toggle the color scheme between light and dark mode that persists on next visit or after a refresh
 
 ## Screenshot
 
@@ -41,7 +43,7 @@ Users should be able to:
 
 ## What I learned
 
-This project turned out to be quite educational for me. I struggled with quite a few things, spent hours on research, and came out with a deeper understanding of React, React Hooks, asyncronous JavaScript and how to handle it in React, Node.js, Vite, differences between bundlers and npm packages (espacially that not all of them can be used with Vite). Here is of the things I learned (probably not exhaustive):
+This project turned out to be quite educational for me. I struggled with quite a few things, spent hours on research, and came out with a deeper understanding of React, React Hooks, asyncronous JavaScript and how to handle it in React, Node.js, Vite, differences between bundlers and npm packages (espacially that not all of them can be used with Vite). It has quite a number of commits because I tried out a lot of things, the process was quite experimental, but I'm happy with how it turned out. Here is of the things I learned (probably not exhaustive):
 
 - I used `data-*` attribute and `[data-theme='dark']` CSS selector to manage color mode change easily (see the Useful resources section for the article), and also used `(prefers-color-scheme: dark)` media rule:
 
@@ -70,7 +72,7 @@ This project turned out to be quite educational for me. I struggled with quite a
   const [darkMode, setDarkMode] = useState<boolean>(false);
   ```
 
-- `Git: Stage Selected Ranges`!!! Thanks to this stack overflow [entry](https://stackoverflow.com/a/65649756), I discovered this godsent command in VS Code. I had been struggling with `git add -patch` and `git add -e`, and the hunks that just could not be made smaller with `s`. But I added a custom keybinding (Ctrl + Alt + K) to this amazing command, and now I am not terrified by the idea of dividing the changes I made into smaller commits anymore. I feel that my commits will be much cleaner from now on!
+- `Git: Stage Selected Ranges`!!! Thanks to this [stack overflow entry](https://stackoverflow.com/a/65649756), I discovered this godsent command in VS Code. I had been struggling with `git add -patch` and `git add -e`, and the hunks that just could not be made smaller with `s`. But I added a custom keybinding (Ctrl + Alt + K) to this amazing command, and now I am not terrified by the idea of dividing the changes I made into smaller commits anymore. I feel that my commits will be much cleaner from now on!
 
 - Using [Font Awesome with React](https://docs.fontawesome.com/web/use-with/react/add-icons#add-individual-icons-explicitly)
 
@@ -93,7 +95,7 @@ This project turned out to be quite educational for me. I struggled with quite a
 
 - [React Select Accessibility](https://react-select.com/advanced#accessibility) - I modified the custom aria live example on this page to add accessibility to my Select component. I know that accessibility comes built-in with HTML elements such as `<select>` and `<option>`, but not with custom elements, so I was happy to see that this package has a section for adding accessibility to this custom interactive component.
 
-- I discovered `LoaderFunction` and `LoaderFunctionArgs` types for TypeScript, even though I didn't use a loader in the end. I realized that there are certain TypeScript types that are defined on packages that can be imported and used as is, which is very useful.
+- I discovered `LoaderFunction` and `LoaderFunctionArgs` types for TypeScript, even though I didn't end up using a loader at all. I realized that there are certain TypeScript types that are defined on packages that can be imported and used as is, which is very useful.
 
 - I also figured out how to pass an extra parameter to the loader function so that I can put it into its own file (again, I ended up not using it but it might be useful to keep it here for future reference):
 
