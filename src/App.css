@@ -128,6 +128,7 @@ button {
   --clr-box-shadow: lightgray;
   --clr-placeholder: #797979;
   --clr-focus: #000000;
+  --clr-hover: #003372;
 }
 
 [data-theme="dark"] {
@@ -137,6 +138,7 @@ button {
   --clr-box-shadow: #1c2727;
   --clr-placeholder: #c5c5c5;
   --clr-focus: #ffffff;
+  --clr-hover: #cae0fd;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -147,6 +149,7 @@ button {
     --clr-box-shadow: #1c2727;
     --clr-placeholder: #f2f2f2;
     --clr-focus: #ffffff;
+    --clr-hover: #cae0fd;
   }
 }
 
@@ -379,8 +382,18 @@ main {
   object-fit: cover;
 }
 
-.country-card__name {
+.country-card__link {
+  display: block;
+  width: max-content;
   margin: 1.5rem 1rem 0 1.5rem;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .country-card__link:hover {
+    color: var(--clr-hover);
+    border-bottom: .15em solid var(--clr-hover);
+    margin-bottom: -.15em;
+  }
 }
 
 .country-card__info {

@@ -10,7 +10,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
   return (
     <div className="display-container container">
       {countries.map((country) => (
-        <article key={country.cca3}>
+        <article className="country-card bg-accent" key={country.cca3}>
           <img
             className="country-card__flag"
             src={country.flags.png}
@@ -18,7 +18,7 @@ export default function CountriesDisplay({ countries }: CountriesDisplayProps) {
           />
           <Link
             to={`/${kebabCase(country.name.common)}`}
-            className="country-card bg-accent"
+            className="bg-accent country-card__link"
           >
             <h2 className="country-card__name block fs-18 fw-800">
               {country.name.common}
